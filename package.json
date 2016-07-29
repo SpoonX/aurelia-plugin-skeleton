@@ -1,0 +1,19 @@
+{
+  "name": "aurelia-plugin-skeleton",
+  "version": "0.0.1",
+  "description": "Skeleton plugin following spoonx conventions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpoonX/aurelia-plugin-skeleton.git"
+  },
+  "author": "SpoonX <info@spoonx.nl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SpoonX/aurelia-plugin-skeleton/issues"
+  },
+  "homepage": "https://github.com/SpoonX/aurelia-plugin-skeleton#readme"
+}
