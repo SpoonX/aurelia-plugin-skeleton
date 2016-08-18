@@ -28,10 +28,9 @@ module.exports = {
     // resources: appRoot + '{**/*.css,**/*.html}',
   //
 
-    /* imports that are only used internally. no need to d.ts export them
+    /* imports that are only used internally, eg 'extend'. no need to d.ts export them
      * importsToIgnoreForDts: [],
    */
-     importsToIgnoreForDts: ['extend']
 
     /* sort when concating
      * sort: true,
