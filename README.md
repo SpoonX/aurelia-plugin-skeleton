@@ -26,14 +26,78 @@ Global gulp and jspm installation
 ## Guideline:
 (to come)
 
-initially
+### initially
 * update package name in package.json, bower.json, typings.json
 * update travis.yml and enable it in https://travis-ci.org/
 
-after adding dependecies
-* update spoonx.js
+#### after adding dependecies
+* update spoonx.js, package.json, main.js imports
 * prepare-release 
 * fix/update package.json/bower.json
 * update installation installations
 
- 
+### update spoonx.js, package.json, main.js imports fro app bundling
+* import all globalResources in the main file
+* add those to spoonx.js `importsToAdd` and `jsResources`
+* add those to package.json's' "aurelia.build.resources"
+* add to "aurelia.build.resources" also all view.htmls without own view-model
+* add intenal imports eg `extend` to spoonx.js to `importsToIgnoreForDts`
+
+## Installation guildline template
+
+### Aureli-Cli
+
+Run `npm i aurelia-plugin-skeleton --save` from your project root.
+
+Aurelia-plugin-skeleton makes use of `extend`. So, add following to the `build.bundles.dependencies` section of `aurelia-project/aurelia.json`.
+
+```js
+"dependencies": [
+  // ...
+  "extend",
+  {
+    "name": "aurelia-plugin-skeleton",
+    "path": "../node_modules/aurelia-plugin-skeleton/dist/amd",
+    "main": "aurelia-plugin-skeleton",
+    "resources": [
+      "component/**/*.html"
+    ]
+  },
+  // ...
+],
+```
+
+### Jspm
+
+Run `jspm i aurelia-plugin-skeleton` from your project root.
+
+Add following to the desired `includes` section of `build/bundles.js`, eg:
+
+```js
+"aurelia": {
+  "includes": [
+    //...
+    "aurelia-plugin-skeleton",
+    "[aurelia-plugin-skeleton/**/*.js]",
+    "aurelia-plugin-skeleton/**/*.html!text",
+    //...
+  ]
+}
+```
+
+If the installation results in having forks, try resolving them by running:
+
+```sh
+jspm inspect --forks
+jspm resolve --only registry:package-name@version
+```
+
+### Webpack
+
+Run `npm i aurelia-plugin-skeleton --save` from your project root.
+
+And add `aurelia-plugin-skeleton` in the `coreBundles.aurelia` section of your `webpack.config.js`.
+
+### Typescript
+
+Npm-based installations pick up the typings automatically. For Jspm-based installations, run `typings i github:spoonx/aurelia-plugin-skeleton` or add `"aurelia-plugin-skeleton": "github:spoonx/aurelia-plugin-skeleton",` to your `typings.json` and run `typings i`.
