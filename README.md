@@ -10,11 +10,12 @@ This aurelia-plugin starter repository uses [spoonx-tools](https://github.com/Sp
 Features:
 * jspm as package manager for the plugin
 * babel6 and babel-dts-builder for transpilation 
-* builds for all module loaders and creates a usuable basic d.ts file for typescript
+* builds for all module loaders and creates a usable basic d.ts file for typescript
 * contains all the entries for jspm, webpack or aurelia-cli installation, for both, ESNext and Typescript
 * starter readme.md (to come) with installation instructions 
 * basic travis.yml
 * `spoonx.js` contains the various build options
+* `gulpfile.js` contains express routes for the tests
 * `gulp help` lists the available tasks
 
 ## Prerequisites:
@@ -36,14 +37,14 @@ Global gulp and jspm installation
 * fix/update package.json/bower.json
 * update installation installations
 
-### update spoonx.js, package.json, main.js imports fro app bundling
+### update spoonx.js, package.json, main.js imports for app bundling
 * import all globalResources in the main file
 * add those to spoonx.js `importsToAdd` and `jsResources`
 * add those to package.json's' "aurelia.build.resources"
 * add to "aurelia.build.resources" also all view.htmls without own view-model
-* add intenal imports eg `extend` to spoonx.js to `importsToIgnoreForDts`
+* add internal imports eg `extend` to spoonx.js to `importsToIgnoreForDts`
 
-## Installation guildline template
+## Installation guideline template
 
 ### Aureli-Cli
 
