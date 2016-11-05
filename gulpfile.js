@@ -4,7 +4,7 @@ require('require-dir')('node_modules/spoonx-tools/build-plugin/tasks');
 
 // 'gulp help' lists the available default tasks
 // you can add additional tasks here
-// the testing express server can be imported and routes added
+// the express server app can be imported and routes added
 var app = require('./node_modules/spoonx-tools/build-plugin/tasks/server').app;
 
 // default: all routes, all methods

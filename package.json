@@ -9,9 +9,7 @@
   ],
   "homepage": "https://github.com/SpoonX/aurelia-plugin-skeleton#readme",
   "main": "dist/commonjs/aurelia-plugin-skeleton.js",
-  "scripts": {
-    "test": "./node_modules/.bin/gulp test"
-  },
+  "typings": "dist/aurelia-plugin-skeleton.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SpoonX/aurelia-plugin-skeleton.git"
@@ -24,6 +22,13 @@
   "bugs": {
     "url": "https://github.com/SpoonX/aurelia-plugin-skeleton/issues"
   },
+  "scripts": {
+    "test": "gulp test",
+    "build": "gulp build",
+    "preversion": "npm test",
+    "version": "npm run build && gulp prepare-package && git add -A dist doc/CHANGELOG.md bower.json",
+    "postpublish": "git push upstream master && git push upstream --tags"
+  },
   "jspm": {
     "registry": "npm",
     "jspmPackage": true,
@@ -33,23 +38,23 @@
       "dist": "dist/amd"
     },
     "dependencies": {
-      "aurelia-dependency-injection": "^1.0.0-rc.1.0.0"
+      "aurelia-dependency-injection": "^1.0.0"
     },
     "peerDependencies": {
-      "aurelia-dependency-injection": "^1.0.0-rc.1.0.0"
+      "aurelia-dependency-injection": "^1.0.0"
     },
     "devDependencies": {
-      "aurelia-dependency-injection": "^1.0.0-rc.1.0.0",
-      "aurelia-pal-browser": "^1.0.0-rc.1.0.0",
-      "aurelia-polyfills": "^1.0.0-rc.1.0.0",
+      "aurelia-dependency-injection": "^1.0.0",
+      "aurelia-pal-browser": "^1.0.0",
+      "aurelia-polyfills": "^1.0.0",
       "fetch": "github:github/fetch@^1.0.0"
     }
   },
   "dependencies": {
-    "aurelia-dependency-injection": "^1.0.0-rc.1.0.0"
+    "aurelia-dependency-injection": "^1.0.0"
   },
   "devDependencies": {
-    "spoonx-tools": "^0.1.0"
+    "spoonx-tools": "^1.0.0-0"
   },
   "aurelia": {
     "build": {
