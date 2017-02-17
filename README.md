@@ -46,7 +46,7 @@ Global gulp and jspm installation
 
 ## Installation guideline template
 
-### Aureli-Cli
+### Aurelia-Cli
 
 Run `npm i aurelia-plugin-skeleton --save` from your project root.
 
